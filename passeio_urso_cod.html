@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Caminho do Urso</title>
+
+        <style>
+            body{
+                background: url("cenario.png") no-repeat center center fixed;
+                background-size: cover;
+            }   
+            img{
+                width: 90px;
+                margin-top: 29%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+       
+            var Urso = ['urso-1.png', 'urso-2.png', 'urso-3.png'];
+            var indiceUrso = Urso.length -1;
+            var margem = 5;
+         
+            function caminho_do_urso(){
+
+                if (indiceUrso<0) {
+                    indiceUrso = Urso.length -1;
+                }
+
+                document.getElementById("play").src = Urso[indiceUrso];
+                indiceUrso = indiceUrso -1;
+                margem = margem + 1;
+                img = document.getElementById("play")
+                img.style = 'margin-left: '+margem+'%';
+            }
+            setInterval(caminho_do_urso, 450);
+        </script>
+
+        <img id="play" src="urso1.png">
+    </body>
+</html>
